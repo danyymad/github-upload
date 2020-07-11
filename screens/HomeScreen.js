@@ -2,7 +2,7 @@ import * as WebBrowser from 'expo-web-browser';
 import * as React from 'react';
 import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-
+import firebase from '../Firebase';
 import { MonoText } from '../components/StyledText';
 
 export default function HomeScreen() {
@@ -80,7 +80,8 @@ function DevelopmentModeNotice() {
 }
 
 function handleLearnMorePress() {
-  WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/workflow/development-mode/');
+  var db= firebase.firestore(); 
+	WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/workflow/development-mode/');
 }
 
 function handleHelpPress() {
